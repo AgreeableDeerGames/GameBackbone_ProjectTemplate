@@ -18,7 +18,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BUILD_DIR}/bin)
 # add dependencies to cmake module path
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PT_ROOT}/cmake/Modules)
 
-# set posfix
+# set postfix
 if(NOT CMAKE_DEBUG_POSTFIX)
   set(CMAKE_DEBUG_POSTFIX -d)
 endif()
