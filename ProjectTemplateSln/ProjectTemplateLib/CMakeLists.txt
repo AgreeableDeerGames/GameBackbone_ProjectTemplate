@@ -17,7 +17,7 @@ set_target_properties(ProjectTemplate PROPERTIES DEBUG_POSTFIX ${CMAKE_DEBUG_POS
 find_package(SFML 2 COMPONENTS network audio graphics window system)
 find_package(TGUI 0.8.2 REQUIRED)
 
-find_package(GameBackbone REQUIRED) 
+find_package(GameBackbone 0.2.1 REQUIRED) 
 target_link_libraries(ProjectTemplate PUBLIC GameBackbone) 
 
 message("current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")

@@ -80,7 +80,7 @@ bool EventController::handleCoreEvent(sf::Event & event)
 		// Set the view on the window to be the reset camera
 		window->setView(camera);
 		// Set the view on the GUI to be the reset camera
-		activeRegion->getGUI()->setView(camera);
+		activeRegion->getGUI().setView(camera);
 		return true;
 	}
 	default:
