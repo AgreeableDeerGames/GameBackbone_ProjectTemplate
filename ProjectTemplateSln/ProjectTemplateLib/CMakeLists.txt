@@ -2,9 +2,10 @@
 
 cmake_minimum_required (VERSION 3.8)
 add_library(ProjectTemplate SHARED
-  "include/ProjectTemplate/Core/EventController.h"
-  "include/ProjectTemplate/Utils/DllUtils.h"
   "include/ProjectTemplate.h"
+  "include/ProjectTemplate/Core/EventController.h"
+  "include/ProjectTemplate/Core/TemplateRegion.h"
+  "include/ProjectTemplate/Utils/DllUtils.h"
   
   "source/Core/EventController.cpp"
   "source/ProjectTemplate.cpp"

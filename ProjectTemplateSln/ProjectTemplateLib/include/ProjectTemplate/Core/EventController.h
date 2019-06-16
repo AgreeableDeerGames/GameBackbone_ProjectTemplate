@@ -1,6 +1,7 @@
 #pragma once
 
 #include <ProjectTemplate/Utils/DllUtils.h>
+#include <ProjectTemplate/Core/TemplateRegion.h>
 
 #include <GameBackbone/Core/CoreEventController.h>
 
@@ -23,7 +24,6 @@ namespace PT
 
 	private:
 		sf::View camera;
-
-		//std::unique_ptr<MainMenuDemoRegion> mainMenuDemoRegion;
+		TemplateRegion mainRegion;
 	};
 }
