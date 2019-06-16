@@ -12,8 +12,8 @@ add_library(ProjectTemplate SHARED
 set_target_properties(ProjectTemplate PROPERTIES DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX})
 
 # GameBackbone has these as public targets. This means that they are automatically
-# added to the target_link_libraries for TestGameBackboneConsumer
-# TestGameBackboneConsumer still needs to find the packages for GB to link against though.
+# added to the target_link_libraries for ProjectTemplate
+# ProjectTemplate still needs to find the packages for GB to link against though.
 find_package(SFML 2 COMPONENTS network audio graphics window system)
 find_package(TGUI 0.8.2 REQUIRED)
 
