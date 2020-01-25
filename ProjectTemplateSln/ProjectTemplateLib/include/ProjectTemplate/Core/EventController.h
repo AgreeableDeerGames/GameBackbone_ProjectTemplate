@@ -8,7 +8,7 @@
 
 namespace PT
 {
-	class libProjectTemplate EventController : public GB::CoreEventController <EventController>
+	class libProjectTemplate EventController final : public GB::CoreEventController
 	{
 	public:
 		// Constructors
@@ -20,7 +20,7 @@ namespace PT
 		virtual ~EventController() = default;
 
 		// Event handling
-		bool handleCoreEvent(sf::Event& event);
+		void handleEvent(sf::Event& event) override;
 
 	private:
 		sf::View camera;

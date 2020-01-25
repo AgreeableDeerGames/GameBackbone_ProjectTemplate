@@ -6,14 +6,14 @@ using namespace PT;
 
 #define APP_NAME "ProjectTemplate"
 
-EventController::EventController() : CoreEventController(APP_NAME), mainRegion(*window)
+EventController::EventController() : CoreEventController(APP_NAME), mainRegion()
 {
 	// Set the camera to the same as the window
-	camera.reset(sf::FloatRect(0, 0, (float)window->getSize().x, (float)window->getSize().y));
-	activeRegion = &mainRegion;
+	camera.reset(sf::FloatRect(0, 0, (float)getWindow().getSize().x, (float)getWindow().getSize().y));
+	setActiveRegion(&mainRegion);
 }
 
-bool EventController::handleCoreEvent(sf::Event & event)
+void EventController::handleEvent(sf::Event & event)
 {
 	// Handle events not handled by the GUI
 	switch (event.type) 
@@ -21,53 +21,51 @@ bool EventController::handleCoreEvent(sf::Event & event)
 		case sf::Event::Closed:
 		{
 			// Close the window, thus closing the game.
-			window->close();
-			return true;
+			getWindow().close();
+			return;
 		}
 		case sf::Event::MouseMoved:
 		{
 			// Get the pixel position and map it to coordinates
 			sf::Vector2i mousePos(event.mouseMove.x, event.mouseMove.y);
-			sf::Vector2f actualPosition = window->mapPixelToCoords(mousePos);
+			sf::Vector2f actualPosition = getWindow().mapPixelToCoords(mousePos);
 			// Pass the event to the active region to handle
-			return true;
+			return;
 		}
 		case sf::Event::MouseButtonPressed:
 		{
 			// Get the pixel position and map it to coordinates
 			sf::Vector2i mousePos(event.mouseButton.x, event.mouseButton.y);
-			sf::Vector2f actualPosition = window->mapPixelToCoords(mousePos);
+			sf::Vector2f actualPosition = getWindow().mapPixelToCoords(mousePos);
 			// Pass the event to the active region to handle
-			return true;
+			return;
 		}
 		case sf::Event::MouseWheelScrolled:
 		{
 			// Pass the event to the active region to handle
-			return true;
+			return;
 		}
 		case sf::Event::KeyPressed:
 		{
 			// Pass the event to the active region to handle
-			return true;
+			return;
 		}
 		case sf::Event::KeyReleased:
 		{
 			// Pass the event to the active region to handle
-			return true;
+			return;
 		}
 		case sf::Event::Resized:
 		{
 			// Reset the camera to the same as the window
 			camera.reset(sf::FloatRect(0, 0, (float)event.size.width, (float)event.size.height));
 			// Set the view on the window to be the reset camera
-			window->setView(camera);
-			// Set the view on the GUI to be the reset camera
-			activeRegion->getGUI().setView(camera);
-			return true;
+			getWindow().setView(camera);
+			return;
 		}
 		default:
 		{
-			return false;
+			return;
 		}
 	}
 }

@@ -4,6 +4,6 @@
 
 int main()
 {
-	PT::ProjectTemplate newGame = PT::ProjectTemplate();
+	PT::ProjectTemplate newGame;
 	return 0;
 }
