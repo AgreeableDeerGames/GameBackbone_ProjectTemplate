@@ -9,14 +9,13 @@ enable_testing()
 set(PROJECTTEMPLATE_TOP_FOLDER ${CMAKE_CURRENT_SOURCE_DIR})
 
 # project wide output directories
-set(BUILD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/build)
-set(PT_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${BUILD_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${BUILD_DIR}/lib)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BUILD_DIR}/bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib CACHE PATH "Output directory for built archive files")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib CACHE PATH "Output directory for built library files")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin CACHE PATH "Output directory for built binary files")
 
-# add dependencies to cmake module path
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PT_ROOT}/cmake/Modules)
+# add custom modules to path
+# Note: For this ProjectTemplate, the Modules folder is empty, but for actual projects, we will likely need to do this.
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake/Modules)
 
 # set postfix
 if(NOT CMAKE_DEBUG_POSTFIX)
