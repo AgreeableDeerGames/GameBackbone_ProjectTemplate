@@ -8,14 +8,12 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 
-
-ProjectTemplateSln/build/
-ProjectTemplateSln/PT_BuildVars\.txt
+build/
 
 */.vs
-ProjectTemplateSln/\.vscode/settings\.json
-ProjectTemplateSln/\.vscode/
-ProjectTemplateSln/CMakeSettings\.json/
+\.vscode/settings\.json
+\.vscode/
+CMakeSettings\.json/
 .vs/
-ProjectTemplateSln/out/
-ProjectTemplateSln/CMakeSettings.json
+out/
+CMakeSettings.json
