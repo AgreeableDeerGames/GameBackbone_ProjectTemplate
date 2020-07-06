@@ -19,11 +19,7 @@ namespace PT
 		EventController& operator=(EventController&& other) = default;
 		virtual ~EventController() = default;
 
-		// Event handling
-		void handleEvent(sf::Event& event) override;
-
 	private:
-		sf::View camera;
 		TemplateRegion mainRegion;
 	};
 }
