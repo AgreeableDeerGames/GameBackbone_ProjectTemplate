@@ -8,6 +8,7 @@ add_library(ProjectTemplate SHARED
   "include/ProjectTemplate/Utils/DllUtils.h"
   
   "source/Core/EventController.cpp"
+  "source/Core/TemplateRegion.cpp"
   "source/ProjectTemplate.cpp"
 )
 set_target_properties(ProjectTemplate PROPERTIES DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX})
@@ -17,7 +18,7 @@ set_target_properties(ProjectTemplate PROPERTIES DEBUG_POSTFIX ${CMAKE_DEBUG_POS
 # ProjectTemplate still needs to find SFML for GB to link against though.
 find_package(SFML 2 COMPONENTS network audio graphics window system)
 
-find_package(GameBackbone 0.4.0 REQUIRED) 
+find_package(GameBackbone 0.4.1 REQUIRED) 
 target_link_libraries(ProjectTemplate PUBLIC GameBackbone) 
 
 message("current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")
